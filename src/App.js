@@ -1,7 +1,8 @@
 
 import './App.css';
 import data from './data.json';
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Products from './components/Products';
 
 export default class App extends Component {
 constructor() {
@@ -20,17 +21,17 @@ constructor() {
          <header>
            <a href="/">Wishing list</a>
          </header>
-         <main>Product List</main>
+         <main>
 
-         <div classsName="content">
-         <div classsName="main-content">
-         Products
+         <div className="content">
+           <div className="main">
+            <Products products={this.state.products}></Products>
            </div>
-           <div classsName="sidebar">
-           Cart Items
-           </div>
+            <div className="sidebar">
+            Cart Items
+            </div>
          </div>
-    
+    </main>
          <footer>All rights reserved.</footer>
     
         </div>
