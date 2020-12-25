@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -19,9 +22,9 @@ body, #root {
   position: relative;
 }
 
-body, input,select, textarea {
-  font-size: 1.6em;;
-  font-family: Arial, Helvetica, sans-serif;
+body, input,select, textarea, button {
+  font-size: 1.6em;
+  font-family: Arial, Montserat, sans-serif;
 }
 
 a:hover {
@@ -106,6 +109,10 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  left: 0;
+  width: 84%;
+  font-size: 1em;
+
 }
 .product-price div,
 .product-price button {
@@ -120,6 +127,7 @@ footer {
   border: 0.1rem #c0c0c0 solid;
   background-color: #f0f0f0;
   cursor: pointer;
+  font-size: 1.2em;
 }
 .button:hover {
   border: 0.1rem #808080 solid;
