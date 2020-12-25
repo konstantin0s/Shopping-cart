@@ -152,3 +152,15 @@ footer {
 .filter div {
   flex: 1;
 }
+
+/* indexcss*/
+.cart {
+display: flex;
+padding: 1em;
+margin: 1em;
+/* flex-wrap: wrap; */
+}
+
+.cart-header {
+  border-bottom: 0.1em solid #c0c0cc;
+}
