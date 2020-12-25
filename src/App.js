@@ -15,6 +15,23 @@ constructor() {
   }
 }
 
+sortProducts = (event) => {
+console.log(event.target.value);
+}
+
+filterProducts = (event) => {
+  console.log(event.target.value);
+  console.log(data);
+  if (event.target.value === ""){
+    this.setState({size: event.target.value, products: data.products})
+  } else {
+  this.setState({size: event.target.value,
+    products: data.products.filter(product => 
+      product.availableSizes.indexOf(event.target.value) >= 0)
+  });
+  }
+}
+
   render() {
 
       return (
@@ -26,7 +43,12 @@ constructor() {
 
          <div className="content">
            <div className="main">
-             <Filter count={this.state.products.length}></Filter>
+             <Filter size={this.state.size}
+             sort={this.state.sort}
+              count={this.state.products.length}
+              filterProducts={this.filterProducts}
+              sortProducts={this.sortProducts}
+              ></Filter>
             <Products products={this.state.products}></Products>
            </div>
             <div className="sidebar">
