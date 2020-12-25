@@ -22,9 +22,13 @@ body, #root {
   position: relative;
 }
 
-body, input,select, textarea, button {
+body, input, textarea, button {
   font-size: 1.6em;
   font-family: Arial, Montserat, sans-serif;
+}
+
+select {
+  font-size: 1.2em;
 }
 
 a:hover {
@@ -59,6 +63,7 @@ header a {
 
 .main {
   display: flex;
+  flex-direction: column;
   flex: 3 60em;
   position: relative;
 }
@@ -134,4 +139,16 @@ footer {
 }
 .button.primary {
   background-color: #f0c040;
+}
+
+/* Filter */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+.filter div {
+  flex: 1;
 }

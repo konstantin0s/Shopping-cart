@@ -4,8 +4,8 @@
     "title": "Dress 1",
     "image": "https://images.pexels.com/photos/4998001/pexels-photo-4998001.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     "description": "About dress 1",
-    "price": 1,
-    "availableSizes": ["XL", "XXL"]
+    "price": 5,
+    "availableSizes": ["S", "L"]
 },
 {   
     "_id": "dress2",
@@ -20,16 +20,16 @@
    "title": "Dress 3",
    "image": "https://images.pexels.com/photos/4998001/pexels-photo-4998001.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
    "description": "About dress 3",
-   "price": 1,
-   "availableSizes": ["XL", "XXL"]
+   "price": 21,
+   "availableSizes": ["M", "XL"]
 },
 {   
     "_id": "dress4",
    "title": "Dress 4",
    "image": "https://images.pexels.com/photos/4998001/pexels-photo-4998001.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
    "description": "About dress 4",
-   "price": 1,
-   "availableSizes": ["XL", "XXL"]
+   "price": 11,
+   "availableSizes": ["S", "M"]
 }
 
 ]
