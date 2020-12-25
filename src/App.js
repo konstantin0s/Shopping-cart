@@ -3,6 +3,7 @@ import './App.css';
 import data from './data.json';
 import React, { Component } from 'react';
 import Products from './components/Products';
+import Filter from './Filter';
 
 export default class App extends Component {
 constructor() {
@@ -25,6 +26,7 @@ constructor() {
 
          <div className="content">
            <div className="main">
+             <Filter count={this.state.products.length}></Filter>
             <Products products={this.state.products}></Products>
            </div>
             <div className="sidebar">
