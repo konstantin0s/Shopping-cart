@@ -64,15 +64,21 @@ header a {
 .main {
   display: flex;
   flex-direction: column;
-  flex: 3 60em;
+  flex: 3 50em;
   position: relative;
 }
 
 .sidebar {
-  display: flex;
-  flex: 1 20em;
   position: relative;
+  left: 0;
+  margin: 0;
+  margin-right: 10px;
 }
+
+.sidebar .button{
+height: 40px;
+}
+
 
 footer {
   grid-area: footer;
@@ -133,12 +139,16 @@ footer {
   background-color: #f0f0f0;
   cursor: pointer;
   font-size: 1.2em;
+  width: auto;
 }
 .button:hover {
   border: 0.1rem #808080 solid;
 }
+
+
 .button.primary {
   background-color: #f0c040;
+  width: auto;
 }
 
 /* Filter */
@@ -152,3 +162,84 @@ footer {
 .filter div {
   flex: 1;
 }
+
+/* index.css*/
+.cart {
+display: flex;
+padding: 1em;
+margin: 0.4em;
+flex-direction: column;
+}
+
+.cart-header {
+  border-bottom: 0.1em solid #c0c0cc;
+}
+
+.cart-items {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.cart-items img{
+  width: 5em;
+}
+
+.cart-items li{
+ display: flex;
+}
+
+.cart-items li div {
+padding: .5em;
+ }
+
+ .cart-items li div:last-child {
+ flex: 1;
+   }
+
+   .right{
+     text-align: right;
+   }
+
+   .total {
+     display: flex;
+     justify-content: space-between;
+     width: 80%;
+     align-items: center;
+   }
+
+  .total > div {
+  font-size: 2em;
+   }
+
+   .total > div,
+   .total > button{
+
+    position: relative;
+   }
+   
+   /* checkout form */
+   form {
+     width: 100%;
+     position: relative;
+   }
+
+ .form-container {
+   position: relative;
+   width: 100%;
+   left: 0;
+   margin-left: 0;
+   padding-left: 0;
+ }
+
+  .form-container li {
+   list-style-type: none;
+    padding: 0.5em;
+   display: flex;
+   flex-direction: column;
+ }
+
+ .form-container input {
+   padding: 0.4em;
+   border: .1em #c0c0c0  solid;
+ }
