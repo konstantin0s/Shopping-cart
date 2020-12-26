@@ -81,9 +81,10 @@ export default class Cart extends Component {
                        </button>
                       </div>
                       {this.state.showCheckout && (
+                            <Fade right cascade>
                         <div className="cart">
                          <form onSubmit={this.createOrder}>
-                          <Fade top cascade>
+                        
                           <ul className="form-container">
                                 <li>
                                     <label>Name</label>
@@ -106,10 +107,10 @@ export default class Cart extends Component {
                                         Checkout</button>
                                 </li>
                             </ul>
-                          </Fade>
+                        
                          </form>
                         </div>
-                        
+                          </Fade>
                     )}
                     </div>
                  </div>
