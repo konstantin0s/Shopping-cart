@@ -13,7 +13,8 @@ constructor() {
     products: data.products,
     size: '',
     sort: '',
-    cartItems: []
+    cartItems: JSON.parse(localStorage.getItem("cartItems")) ?
+    JSON.parse(localStorage.getItem("cartItems")) : []
   }
 }
 
@@ -31,10 +32,16 @@ addToCart = (product) => {
   }
   this.setState({
     cartItems: cartItems
-  })
+  });
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
-removeFromCart = () => {
+removeFromCart = (product) => {
+  const cartItems = this.state.cartItems.slice();
+  this.setState({
+    cartItems: cartItems.filter(item => item._id !== product._id)
+  })
+  localStorage.removeItem("cartItems", JSON.stringify(cartItems));
 
 }
 

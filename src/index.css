@@ -69,10 +69,14 @@ header a {
 }
 
 .sidebar {
-  display: flex;
   flex: 1 20em;
-  position: relative;
+  width: 20%;
 }
+
+.sidebar .button{
+height: 40px;
+}
+
 
 footer {
   grid-area: footer;
@@ -153,14 +157,59 @@ footer {
   flex: 1;
 }
 
-/* indexcss*/
+/* index.css*/
 .cart {
 display: flex;
 padding: 1em;
-margin: 1em;
+margin: 0.4em;
 /* flex-wrap: wrap; */
 }
 
 .cart-header {
   border-bottom: 0.1em solid #c0c0cc;
 }
+
+.cart-items {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.cart-items img{
+  width: 5em;
+}
+
+.cart-items li{
+ display: flex;
+}
+
+.cart-items li div {
+padding: .5em;
+ }
+
+ .cart-items li div:last-child {
+ flex: 1;
+   }
+
+   .right{
+     text-align: right;
+   }
+
+   .total {
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+     align-items: center;
+   }
+
+  .total > div {
+  font-size: 2em;
+   }
+
+   .total > div,
+   .total > button{
+    flex: 1;
+   }
+   
+ 
+

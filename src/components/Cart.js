@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import formatCurrency from '../util';
 
 export default class Cart extends Component {
     render() {
@@ -14,22 +15,42 @@ export default class Cart extends Component {
                       </div>
                 )}
                 <div className="cart">
-                    <ul className="cart-list">
-                    {cartItems.map(cart => (
-                        <li key={cart._id}>
+                    <ul className="cart-items">
+                    {cartItems.map(item => (
+                        <li key={item._id}>
                             <div>
-                                <img src={cart.image} alt={cart.title} />
+                                <img src={item.image} alt={item.title} />
                             </div>
                             <div>
-                            {cart.title}
+                            {item.title}
                             </div>
-                            <button onClick={() => this.props.removeFromCart(cart)}>
-
+                            <div className="right">
+                                {formatCurrency(item.price)} x 
+                                {item.count} {" "}
+                            </div>
+                            <button className="button"
+                            onClick={() => this.props.removeFromCart(item)}>
+Remove
                             </button>
                         </li>
                     ))}
                     </ul>
                 </div>
+                {cartItems.length !== 0 && 
+                     <div className="cart">
+                     <div className="total">
+                      <div>
+                        Total:{" "}
+                        {formatCurrency(
+                        cartItems.reduce((a, c) => a + c.price * c.count, 0)
+                        )}
+                      </div>
+                      <button className="button primary">
+                         Proceed
+                       </button>
+                     </div>
+                    </div>
+                }
             </div>
         )
     }
