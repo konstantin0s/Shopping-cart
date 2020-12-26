@@ -45,6 +45,10 @@ removeFromCart = (product) => {
 
 }
 
+createOrder= (order) => {
+  alert('need to save order' + order.name);
+}
+
 sortProducts = (event) => {
 console.log(event.target.value);
 const sort = event.target.value;
@@ -96,7 +100,7 @@ filterProducts = (event) => {
             ></Products>
            </div>
             <div className="sidebar">
-            <Cart cartItems={this.state.cartItems} 
+            <Cart createOrder={this.createOrder} cartItems={this.state.cartItems} 
             removeFromCart={this.removeFromCart}/>
             </div>
          </div>
