@@ -41,7 +41,7 @@ removeFromCart = (product) => {
   this.setState({
     cartItems: cartItems.filter(item => item._id !== product._id)
   })
-  localStorage.removeItem("cartItems", JSON.stringify(cartItems));
+  localStorage.setItem("cartItems", JSON.stringify(cartItems.filter(item => item._id !== product._id)));
 
 }
 
