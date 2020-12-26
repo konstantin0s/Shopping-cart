@@ -52,10 +52,35 @@ export default class Products extends Component {
     <Modal  ariaHideApp={false}
     isOpen={true} onRequestClose={this.closeModal}>
         <Zoom>
-            <div>Modal</div>
-            <button lassName="close-modal"
+        <button lassName="close-modal"
              onClick={this.closeModal}
             >X</button>
+
+            <div className="product-details">
+                <img src={product.image} alt={product.title} />
+            
+                <div className="product-details-desc">
+                <p>{product.title}</p>
+                <p>{product.description}</p>
+                <p>Available sizes:
+                    {product.availableSizes.map(size => (
+                        <span>{ " "}
+                        <button className="button">{size}</button>
+                         </span>
+                    ))}</p>
+                <div>
+                    <div>
+                        {formatCurrency(product.price)}
+                    </div>
+                    <button onClick={() => {this.props.addToCart(product); 
+                    this.closeModal();}}
+                      className="button primary">
+                      Add To Cart
+                    </button>
+                </div>
+            </div>
+            </div>
+        
         </Zoom>
     </Modal>
 )}
