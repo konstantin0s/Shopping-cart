@@ -243,3 +243,36 @@ padding: .5em;
    padding: 0.4em;
    border: .1em #c0c0c0  solid;
  }
+
+ /*modal and product details */
+
+ .product-details {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh;
+
+ }
+
+ .product-details img {
+   max-height: 80vh;
+   max-width: 46em;
+   position: relative;
+   margin: 0 auto;
+ }
+
+ .product-details-desc {
+   flex: 1 1;
+   margin: 1em;
+}
+
+.close-modal {
+  position: absolute;
+  right: 1em;
+  top: 2.5em;
+  cursor: pointer;
+  background: #bd2525;
+  border: none;
+  color: #fff;
+  z-index: 1000;
+}

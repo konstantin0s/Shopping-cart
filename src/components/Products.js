@@ -52,7 +52,7 @@ export default class Products extends Component {
     <Modal  ariaHideApp={false}
     isOpen={true} onRequestClose={this.closeModal}>
         <Zoom>
-        <button lassName="close-modal"
+        <button className="close-modal"
              onClick={this.closeModal}
             >X</button>
 
