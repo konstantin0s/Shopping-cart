@@ -25,7 +25,7 @@ mongoose
         description: {type: String},
         image: {type: String},
         price: {type: Number},
-        availableSizes: {type: String}
+        availableSizes: {type: Array}
     }));
 
     app.get('/api/products', async (req, res) => {
