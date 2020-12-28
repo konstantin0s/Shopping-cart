@@ -5,7 +5,7 @@ const shortid =  require('shortid');
 require("dotenv").config();
 
 const app = express();
-app.use(bodyParser);
+app.use(bodyParser.json());
 
 mongoose
     .connect(process.env.MONGODB_URI, { useNewUrlParser: true, 
@@ -20,9 +20,9 @@ mongoose
     //define model
     const Product = mongoose.model('products',
     new mongoose.Schema({
-        _id: {type: shortid.generate()},
+        _id: {type: String, default: shortid.generate()},
         title: {type: String},
-        descriptiom: {type: String},
+        description: {type: String},
         image: {type: String},
         price: {type: Number},
         availableSizes: {type: String}
@@ -37,6 +37,11 @@ mongoose
         const newProduct =  Product(req.body);
      const savedProduct = await newProduct.save();
      res.send(savedProduct);
+    });
+
+    app.delete('/api/products/:id', async (req, res) => {
+        const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+        res.send(deletedProduct);
     });
 
     app.listen(process.env.PORT || 5000, () => {
