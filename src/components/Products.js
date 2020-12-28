@@ -49,7 +49,7 @@ export default class Products extends Component {
                </Fade>
 
 {product && (
-    <Modal  ariaHideApp={false}
+    <Modal ariaHideApp={false}
     isOpen={true} onRequestClose={this.closeModal}>
         <Zoom>
         <button className="close-modal"
