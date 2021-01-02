@@ -101,7 +101,7 @@ import {connect} from "react-redux";
 }
 
 export default connect(
-    (state) => ({ products: state.products.items }),
+    (state) => ({ products: state.products.filteredItems }),
     {
       fetchProducts,
     }
