@@ -8,44 +8,38 @@ import store from './store';
 import {Provider} from "react-redux";
 
 export default class App extends Component {
-constructor() {
-  super();
-  this.state = {
-    cartItems: JSON.parse(localStorage.getItem("cartItems")) ?
-    JSON.parse(localStorage.getItem("cartItems")) : []
-  }
-}
 
-addToCart = (product) => {
-  const cartItems = this.state.cartItems.slice();
-  let alreadyInCart = false;
-  cartItems.forEach(item => {
-    if (item._id === product._id) {
-      item.count++;
-      alreadyInCart = true;
-    }
-  })
-  if (!alreadyInCart) {
-    cartItems.push({...product, count: 1});
-  }
-  this.setState({
-    cartItems: cartItems
-  });
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
-}
 
-removeFromCart = (product) => {
-  const cartItems = this.state.cartItems.slice();
-  this.setState({
-    cartItems: cartItems.filter(item => item._id !== product._id)
-  })
-  localStorage.setItem("cartItems", JSON.stringify(cartItems.filter(item => item._id !== product._id)));
+// addToCart = (product) => {
+//   const cartItems = this.state.cartItems.slice();
+//   let alreadyInCart = false;
+//   cartItems.forEach(item => {
+//     if (item._id === product._id) {
+//       item.count++;
+//       alreadyInCart = true;
+//     }
+//   })
+//   if (!alreadyInCart) {
+//     cartItems.push({...product, count: 1});
+//   }
+//   this.setState({
+//     cartItems: cartItems
+//   });
+//   localStorage.setItem("cartItems", JSON.stringify(cartItems));
+// }
 
-}
+// removeFromCart = (product) => {
+//   const cartItems = this.state.cartItems.slice();
+//   this.setState({
+//     cartItems: cartItems.filter(item => item._id !== product._id)
+//   })
+//   localStorage.setItem("cartItems", JSON.stringify(cartItems.filter(item => item._id !== product._id)));
 
-createOrder= (order) => {
-  alert('need to save order' + order.name);
-}
+// }
+
+// createOrder= (order) => {
+//   alert('need to save order' + order.name);
+// }
 
 // sortProducts = (event) => {
 // console.log(event.target.value);
@@ -91,13 +85,10 @@ createOrder= (order) => {
              <Filter 
             
               ></Filter>
-            <Products 
-            addToCart={this.addToCart}
-            ></Products>
+            <Products></Products>
            </div>
             <div className="sidebar">
-            <Cart createOrder={this.createOrder} cartItems={this.state.cartItems} 
-            removeFromCart={this.removeFromCart}/>
+            <Cart />
             </div>
          </div>
     </main>
